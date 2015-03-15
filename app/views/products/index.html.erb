@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Products</h1>
+<h1>Listing Products<% puts "Chunky Bacon" %></h1>
 
 <table>
   <thead>
@@ -31,3 +31,8 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+<br>
+
+<% 100.times do %>
+  <br>Chunky Bacon
+<% end %>
