@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Products<% puts "Chunky Bacon" %></h1>
+<h1>Listing Products</h1>
 
 <table>
   <thead>
@@ -14,8 +14,11 @@
   </thead>
 
   <tbody>
+
+
     <% @products.each do |product| %>
       <tr>
+        
         <td><%= product.title %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>
@@ -27,6 +30,11 @@
     <% end %>
   </tbody>
 </table>
+
+<h3> Average Price of All Products: <%= @average_price.round(2) %> </h3>
+<h3> Highest Price: <%= @maximum_price.price.round(2) %> </h3>
+<h3> Number of Products: <%= @products.count %> </h3>
+<h3> Stock of All Products: <%= @total_stock %></h3>
 
 <br>
 

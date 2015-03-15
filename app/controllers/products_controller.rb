@@ -1,10 +1,31 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+    
+    #@sum
+    
+    @product_count = 0
+    
+    @product_count = @products.length
+    
+    @total_prices = 0
+    @average_price = 0
+    @total_stock = 0
+    
+    @products.each do |product|
+      @total_prices += product.price
+      @total_stock += product.stock_quantity
+    end
+    
+    @average_price = @total_prices / Product.count
+    
+    @maximum_price = @products.max_by(&:price)
+    
   end
 
   # GET /products/1
